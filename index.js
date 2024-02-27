@@ -33,10 +33,28 @@ const component = new Component1();
 console.log(component);
 
 // https://github.com/TrainingCenterFreshcode/node-welcome
+https://github.com/TrainingCenterFreshcode/node-welcome/blob/main/index.js
+
+*/
+
+
+/*
+const fs = require('fs').promises;
+
+const p = fs.readFile('./text.txt', 'utf-8');
+p.then(data => console.log(data))
+
+*/
+/*
+const fs = require('fs').promises;
+const p = fs.readFile('./test.txt', 'utf8');
+p.then((data) => {console.log(data)});
 
 */
 
 const fs = require('fs').promises;
 
-const p = fs.readFile('./text.txt', 'utf-8');
-p.then(data => console.log(data))
+fs.readFile('./text.txt', 'utf8')
+.then((content) => {const newContent = `OLD content: ${content} and NEW content: 'Hello world'`;
+  fs.writeFile('./newfile.txt', newContent, 'utf8'); // перезаписує файли !!!
+});
