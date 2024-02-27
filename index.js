@@ -52,9 +52,32 @@ p.then((data) => {console.log(data)});
 
 */
 
+/*
 const fs = require('fs').promises;
 
 fs.readFile('./text.txt', 'utf8')
 .then((content) => {const newContent = `OLD content: ${content} and NEW content: 'Hello world'`;
   fs.writeFile('./newfile.txt', newContent, 'utf8'); // перезаписує файли !!!
 });
+
+*/
+/*
+const fs = require('fs').promises;
+
+fs.readFile('./text.txt', 'utf8')
+.then((content) => {const newContent = `APPEND OLD content: ${content} and NEW content: 'Hello world'`;
+  //fs.writeFile('./newfile.txt', newContent, 'utf8'); // перезаписує файли !!!
+  fs.appendFile('./newfile.txt', newContent, 'utf8');  // дописує файл
+});
+*/
+
+/*
+Замінити якусь частину файлу
+
+1. Читаємо весь файл через readFile -> весь вміст файлу
+2. Якось через JS змінюємо вміст файлу -> ту частину вмісту файлу, чка нам потрібна
+3. Перезаписати цільовий фвйл через writeFile тими даними, які отримали в п.2
+*/
+
+
+console.log(' hi-hi-hi !')
